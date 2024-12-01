@@ -12,11 +12,11 @@
 #define LR 3
 
 unsigned long lastMillis = 0; // Tiempo del último cambio
-const unsigned long interval = 1000; // Intervalo entre acciones (1 segundo)
+const unsigned long interval = 500; // Intervalo entre acciones 
 
 int stateSearch = 0; // Estado de busqueda
 
-bool inicio = false;
+int inicio = 0;
 
 volatile float dist = 0;
 volatile int lineL = 0;
@@ -37,11 +37,12 @@ void setup() {
 
 void loop() {
   
-  if (inicio == false){
+  if (inicio == 50){
     atacar();
-    delay(2000);
-    inicio = true;
+    inicio++;
   }
+
+  inicio = 0; 
   
   imprimirSensores();
   

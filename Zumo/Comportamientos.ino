@@ -30,31 +30,36 @@ void buscar() {
 
 void atacar() {
   Serial.println("Atacar");
-  avanzar(51);
+  if (enemigo <= 10){
+    avanzar(100);
+  }else{
+    avanzar(51);
+  }
+  
 }
 
 void entrarL() {
   Serial.println("entrar L");
   detener();
-  delay(100);
+  delay(20);
   retroceder(100);
-  delay(300);
+  delay(100);
 }
 
 void entrarR() {
   Serial.println("entrar R");
   detener();
-  delay(100);
+  delay(20);
   retroceder(100);
-  delay(300);
+  delay(100);
 }
 
 void escape() {
   Serial.println("Retirar");
   detener();
-  delay(100);
+  delay(20);
   retroceder(100);
-  delay(300);
+  delay(100);
 }
 
 void morir() {
