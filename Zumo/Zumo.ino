@@ -32,17 +32,15 @@ void setup() {
   Serial.begin(115200);
   Timer1.initialize(20000);
   Timer1.attachInterrupt(leerSensores);
+
+  delay(1000);  // Espera 1 segundo
+  avanzar(60);  // Mueve los motores hacia adelante con velocidad 60
+  delay(200);   // Mantiene el movimiento por 200ms
+  detener();    // Detiene los motores después del movimiento
   
 }
 
 void loop() {
-  
-  if (inicio == 50){
-    atacar();
-    inicio++;
-  }
-
-  inicio = 0; 
   
   imprimirSensores();
   
